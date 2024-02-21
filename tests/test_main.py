@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import pytest
 from simple_calculator.main import SimpleCalculator # simplecalculator class is
+
+
+
 # imported from simple_calculator.py
 
 def test_add_two_numbers():
@@ -41,4 +45,17 @@ def test_mul_two_numbers():
 
     assert result == 20 # first computes result == 20 -> boolean assert passed if is True otherwise raise exception if result is False
 
+def test_mul_by_zero_raises_exception():
+    """ test mul_by_zero_raises_exception"""
+    calculator = SimpleCalculator() # instatiated the class calculator
+
+    with pytest.raises(ValueError):
+        calculator.mul(5, 0)
+
 def test_div_two_numbers():
+    """test division"""
+    calculator = SimpleCalculator() # instatiated the class calculator
+
+    result = calculator.div(5, 0)
+
+    assert result == float('inf') # first computes result == 1.25 -> boolean assert passed if is True otherwise raise exception if result is False

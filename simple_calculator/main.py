@@ -14,5 +14,13 @@ class SimpleCalculator:
 
     def mul(self, *args):
         """ mul method"""
+        if not all(args):
+            raise ValueError
         return reduce(operator.mul, args)
-
+   
+    def div(self, a, b):
+        """ div method"""
+        try:
+            return a / b
+        except ZeroDivisionError:
+            return float('inf') # return infinity if division by zero
