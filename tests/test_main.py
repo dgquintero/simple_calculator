@@ -33,3 +33,12 @@ def test_substact_two_numbers():
 
     assert result == 1 # first computes result == 1 -> boolean assert passed if is True otherwise raise exception if result is False
 
+def test_mul_two_numbers():
+    """ test mul_two_numbers"""
+    calculator = SimpleCalculator() # instatiated the class calculator
+
+    result = calculator.mul(5, 4)
+
+    assert result == 20 # first computes result == 20 -> boolean assert passed if is True otherwise raise exception if result is False
+
+def test_div_two_numbers():

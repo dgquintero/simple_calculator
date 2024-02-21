@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from functools import reduce
+import operator
 
 class SimpleCalculator:
     """ SimpleCalculator class"""
@@ -9,3 +11,8 @@ class SimpleCalculator:
     def substract(self, a, b):
         """ substract method"""
         return a - b
+
+    def mul(self, *args):
+        """ mul method"""
+        return reduce(operator.mul, args)
+
