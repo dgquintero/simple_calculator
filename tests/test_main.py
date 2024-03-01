@@ -134,3 +134,11 @@ def test_avg_manages_zero_value_lower_outlier():
 
     assert result == 0.5
     
+def test_avg_manages_zero_value_upper_outlier():
+    """Test lt and gt thresholds"""
+
+    calculator = SimpleCalculator() # instatiated the class calculator
+
+    result = calculator.avg([-1, 0, 1], ut=0)
+
+    assert result == -0.5
