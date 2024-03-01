@@ -24,3 +24,17 @@ class SimpleCalculator:
             return a / b
         except ZeroDivisionError:
             return float('inf') # return infinity if division by zero
+
+
+    def avg(self, it, lt=None, ut=None):
+        """ avg method"""
+
+        _it = it[:]
+
+        if lt is not None:
+            _it = [i for i in _it if i >= lt]
+
+        if ut is not None:
+            _it = [i for i in _it if i <= ut]
+
+        return sum(_it) / len(_it)
